@@ -4,5 +4,6 @@
   },
   "devDependencies": {
     "serverless-offline": "^8.8.0"
-  }
+  },
+  "name": "serverless-sample"
 }
