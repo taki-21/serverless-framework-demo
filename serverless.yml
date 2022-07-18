@@ -1,0 +1,28 @@
+service: aws-python-project
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: ${opt:stage, 'dev'}
+  region: ap-northeast-1
+  # apiName: ${self:service}-${self:provider.stage}
+
+# Lambdaを構築
+functions:
+  # 関数名を指定
+  api:
+    # handler関数を指定
+    handler: handler.hello
+    # name: ${self:service}-api-${self:provider.stage}
+    timeout: 200
+    # Lambdaのイベントトリガーを設定
+    events:
+      # トリガーとしてAPIGatewayを構築
+      - http:
+          # リソースを指定
+          path: sample/test
+          # メソッドを指定
+          method: get
+          integration: lambda
