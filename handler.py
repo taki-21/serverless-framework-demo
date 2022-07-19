@@ -4,7 +4,7 @@ import json
 def hello(event, context):
     body = {
         "plan_size": {
-            "wight": 3309.0,
+            "width": 3309.0,
             "height": 2339.0
         }
     }
