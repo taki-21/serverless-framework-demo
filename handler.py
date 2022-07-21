@@ -1,6 +1,3 @@
-import json
-
-
 def hello(event, context):
     body = {
         "plan_size": {
